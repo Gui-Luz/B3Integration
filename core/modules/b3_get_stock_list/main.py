@@ -1,5 +1,5 @@
 from datetime import datetime
-from core.database.redis_configuration import HOST, PORT
+from core.configurations import HOST, PORT
 from core.modules.b3_get_stock_list.get_stock_list import get_symbols
 from core.modules.rrcq.rrcq import RedisReadyCircularQueue
 

@@ -1,6 +1,6 @@
 from flask_restful import Resource, reqparse
 from core.modules.b3_get_stock_list.main import lambda_handler
-from core.configurations.configurations import API_SECRET
+from core.configurations import API_SECRET
 
 
 parser = reqparse.RequestParser()

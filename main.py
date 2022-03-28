@@ -1,12 +1,9 @@
 from flask import Flask
 from flask_restful import Api
-from core.configurations.configurations import API_SECRET
+from core.configurations import API_SECRET, GET_STOCK_DATA_ENDPOINT, GET_STOCK_LIST_ENDPOINT, STOCK_SYMBOL_ENDPOINT
 from core.endpoints.b3_get_stock_list_endpoint import GetStockList
 from core.endpoints.b3_get_current_stock_data_endpoint import GetStockData
 from core.endpoints.stock_symbol_endpoint import StockSymbol
-from core.configurations.configurations import GET_STOCK_LIST_ENDPOINT
-from core.configurations.configurations import GET_STOCK_DATA_ENDPOINT
-from core.configurations.configurations import STOCK_SYMBOL_ENDPOINT
 
 
 app = Flask(__name__)
@@ -19,4 +16,4 @@ api_server.add_resource(StockSymbol, STOCK_SYMBOL_ENDPOINT)
 
 
 if __name__ == '__main__':
-    app.run(debug=True, port=5000)
+    app.run(debug=False, port=5000)

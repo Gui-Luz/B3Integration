@@ -1,7 +1,7 @@
 import urllib3
 import base64
 import json
-from core.configurations.configurations import B3_SYMBOLS_URL
+from core.configurations import B3_SYMBOLS_URL
 
 urllib3.disable_warnings()
 

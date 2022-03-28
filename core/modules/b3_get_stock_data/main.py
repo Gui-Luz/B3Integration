@@ -1,6 +1,6 @@
 import threading
 from datetime import datetime
-from core.database.redis_configuration import HOST, PORT
+from core.configurations import HOST, PORT
 from core.modules.b3_get_stock_data.stock import get_price_description
 from core.modules.b3_get_stock_data.redis_client import set_stock_price_and_description
 from core.modules.rrcq.rrcq import RedisReadyCircularQueue

@@ -1,6 +1,6 @@
 import json
 import urllib3
-from core.configurations.configurations import B3_STOCK_INFO_URL
+from core.configurations import B3_STOCK_INFO_URL
 
 
 def get_price_description(symbol):

@@ -1,6 +1,6 @@
 from flask_restful import Resource, reqparse
 from core.modules.stock_symbol.stock_symbol import GetStockInfoRedisConnector
-from core.configurations.configurations import API_SECRET
+from core.configurations import API_SECRET
 
 
 parser = reqparse.RequestParser()
@@ -15,7 +15,7 @@ class StockSymbol(Resource):
         self.token = args.get('token')
         self.stock_symbol = args.get('stock_symbol')
 
-    def post(self):
+    def get(self):
         if self.token == API_SECRET:
             connector = GetStockInfoRedisConnector(self.stock_symbol)
             time = connector.get_time()

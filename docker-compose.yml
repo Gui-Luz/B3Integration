@@ -1,0 +1,27 @@
+version: '3'
+services:
+ b3_integration:
+  build:
+   dockerfile: ./Dockerfile
+   context: .
+  image: guiluz/b3integration
+  container_name: B3Integration
+  networks:
+   CarteiraAppNet:
+    ipv4_address: 172.28.1.1
+  ports:
+   - "5000:80"
+ redis:
+  image: redis
+  container_name: redis
+  networks:
+   CarteiraAppNet:
+    ipv4_address: 172.28.1.2
+  ports:
+   - "6379:6379"
+networks:
+ CarteiraAppNet:
+  driver: bridge
+  ipam:
+   config:
+    - subnet: 172.28.1.0/16
